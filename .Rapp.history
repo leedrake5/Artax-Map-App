@@ -1,1449 +1,423 @@
-head(fish.melt)
-test <- ggplot(fish.melt) +#
-geom_tile(aes(x, y, colour=ncp, fill=ncp))) +#
-scale_colour_gradientn(colours=terrain.colors(10)) +#
-scale_fill_gradientn(colours=terrain.colors(10)) +#
-theme_light()#
-test
-test <- ggplot(fish.melt) +#
-geom_tile(aes(x, y, colour=ncp, fill=ncp)) +#
-scale_colour_gradientn(colours=terrain.colors(10)) +#
-scale_fill_gradientn(colours=terrain.colors(10)) +#
-theme_light()#
-test
-test <- ggplot(fish.melt) +#
-geom_tile(aes(x, y, colour=ncp, fill=ncp)) +#
-scale_colour_gradientn(colours=terrain.colors(10)) +#
-scale_fill_gradientn(colours=terrain.colors(10)) +#
-coord_equal() +#
-theme_light()#
-test
-proto.fish <- loadWorkbook(file="/Users/lee/Desktop/fossil fish bone.xlsx")
-head(proto.fish)
-fish.sheets <- getSheets(proto.fish)
-fish.sheets
-fish.sheets$'Si K12'
-fish.names <- names(fish.sheets)
-fish.names
-fishes <- lapply(fish.names, function(x) read.xlsx(file="/Users/lee/Desktop/fossil fish bone.xlsx", sheetIndex=x))
-head(fishes)
-names(fishes) <- fish.names
-ls(fishes)
-head(fishes)
-fish.names <- as.vector(names(fish.sheets))
-fish.names
-fishes <- lapply(fish.names, function(x) read.xlsx(file="/Users/lee/Desktop/fossil fish bone.xlsx", sheetIndex=x))#
-names(fishes) <- fish.names
-fishes <- pblapply(fish.names, function(x) read.xlsx(file="/Users/lee/Desktop/fossil fish bone.xlsx", sheetIndex=x))#
-names(fishes) <- fish.names
-library(pbapply)
-fishes <- pblapply(fish.names, function(x) read.xlsx(file="/Users/lee/Desktop/fossil fish bone.xlsx", sheetIndex=x))#
-names(fishes) <- fish.names
-ls(fishes)
-names(fishes)
-head(fishes[[1]])
-fishes <- fishes[[2:length(fish.names)]]
-fishes[[1]] <- NULL
-head(fishes)
-length(fishes)
-melted.fishes <- pblapply(fishes, function(x), melt(fishes, id="NA."))
-melted.fishes <- pblapply(fishes function(x), melt(fishes, id="NA."))
-melted.fishes <- pblapply(fishes, function(x) melt(fishes, id="NA."))
-head(fish.melt)
-x84
-as.numeric(x84)
-as.numeric("x84")
-ls(melted.fishes[[2]])
-head(melted.fishes[[2]])
-tail(melted.fishes[[2]])
-length(melted.fishes[[2]]$variable)
-length(melted.fishes[[4]]$variable)
-melted.fishes <- melt(fishes, id="NA.")
-head(melted.fishes)
-tail(melted.fishes)
-fish.melt <- melt(fishes, id="NA.")#
-    fish.melt$variable <- as.numeric(substring(fish.melt$variable, 2))#
-    colnames(fish.melt) <- c("y", "x", "ncp")
-head(fish.melt)
-colnames(fish.melt) <- c("y", "x", "ncp", "Element")
-head(fish.melt)
-head(fish.melt$y)
-head(fish.melt$x)
-head(fish.melt$Element)
-head(fish.melt$ncp)
-fish.melt$variable <- as.numeric(substring(fish.melt$variable, 2))#
-    colnames(fish.melt) <- c("y", "x", "counts", "Element")
-head(fish.melt)
-fish.melt <- melt(fishes, id="NA.")#
-    fish.melt$variable <- as.numeric(substring(fish.melt$variable, 2))#
-    colnames(fish.melt) <- c("y", "x", "counts", "Element")
-head(fish.melt)
+colnames(empty.table) <- c("Depth", "14C Age", "Sigma", "CalCurve")
+empty.table
+runApp("~/GitHub/CloudCore")
+package.installer("BChron")
+install.packages("BChron")
+runApp("~/GitHub/CloudCore")
+x <- c(1, 2, 3)
+y <- c(1, 2, 3)
+xy.frame <- data.frame(x, y)
+colnames(xy.frame) <- c("14C Age", "Sigma")
+xy.frame
+as.data.frame(xy.frame)
+xy.frame[,1]
 library(shiny)
-runApp("~/Desktop/ArtaxMap App")
-traceback()
-head(fish.melt)
-test.subset <- subset(fishImport, fishImport$Element=="Ca K12")
-test.subset <- subset(fish.melt, fish.melt$Element=="Ca K12")
-tail(test.subset)
-runApp("~/Desktop/ArtaxMap App")
+runApp("~/GitHub/CloudCore")
+bay <- "2"
+bay
+as.numeric(bay)
+runApp("~/GitHub/CloudCore")
+x <- c(500, 1000)
+y <- c(50, 100)
+z <- c("intcal13", "intcal13")
+d <- c(2, 8)
+x <- c(500, 1000, 0, 0)#
+y <- c(50, 100, 0, 0)#
+z <- c("intcal13","intcal13","intcal13","intcal13" )#
+d <- c(2, 8, 0, 0)#
+#
+age.frame <- data.frame(d, x, y, z)#
+colnames(age.frame) <- c("Depth", "14C Age", "Sigma", "CalCurve")
+age.frame
+runApp("~/GitHub/xrf-app")
+x <- c(500, 1000, 0, 0)#
+y <- c(50, 100, 0, 0)#
+z <- c("intcal13","intcal13","intcal13","intcal13" )#
+d <- c(2, 8, 0, 0)#
+#
+age.frame <- data.frame(d, x, y, z)#
+colnames(age.frame) <- c("Depth", "14C Age", "Sigma", "CalCurve")#
+#
+age.subset <- subset(age.frame, age.frame$Sigma==!(0)
+)
+age.subset
+age.subset <- subset(age.frame, !age.frame$Sigma==0)
+age.subset
+fe <- c(5, 6, 7, 8)#
+depth <-(1, 5, 10, 14)#
+#
+data.stuff <- data.frame(fe, depth)#
+colnames(data.stuff) <- c("Fe", "Depth")
+fe <- c(5, 6, 7, 8)#
+depth <-c(1, 5, 10, 14)#
+#
+data.stuff <- data.frame(fe, depth)#
+colnames(data.stuff) <- c("Fe", "Depth")
+data.stuff
+age.math <- Bchronology(ages=as.numeric(as.vector(age.frame[,2])), ageSds=as.numeric(as.vector(age.frame[,3])), positions=as.numeric(as.vector(age.frame[,1])), positionThickness=rep(0.5, length(age.model$Sigma)), calCurves=DF5[,4], burn=2000, predictPositions=as.numeric(as.vector(data.stuff$Depth)))
+age.math <- Bchronology(ages=as.numeric(as.vector(age.frame[,2])), ageSds=as.numeric(as.vector(age.frame[,3])), positions=as.numeric(as.vector(age.frame[,1])), positionThickness=rep(0.5, length(age.frame$Sigma)), calCurves=DF5[,4], burn=2000, predictPositions=as.numeric(as.vector(data.stuff$Depth)))
+age.math <- Bchronology(ages=as.numeric(as.vector(age.frame[,2])), ageSds=as.numeric(as.vector(age.frame[,3])), positions=as.numeric(as.vector(age.frame[,1])), positionThickness=rep(0.5, length(age.frame$Sigma)), calCurves=age.frame[,4], burn=2000, predictPositions=as.numeric(as.vector(data.stuff$Depth)))
+age.frame
+as.numeric(as.vector(age.frame[,2]))
+age.math <- Bchronology(ages=as.numeric(as.vector(age.subset[,2])), ageSds=as.numeric(as.vector(age.subset[,3])), positions=as.numeric(as.vector(age.subset[,1])), positionThickness=rep(0.5, length(age.subset $Sigma)), calCurves= age.subset[,4], burn=2000, predictPositions=as.numeric(as.vector(data.stuff$Depth)))
+age.results <- predict(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+quartz()
+plot(age.math)
+head(age.results)
+age.results
+str(age.results)
+str(age.math)
+age.results <- predict.BchronologyRun(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+library(Bchron)
+age.results <- predict.BchronologyRun(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+age.results <- predict(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+head(age.results)
+plot(age.results)
+x <- c(500, 1000, 2000, 3000)#
+y <- c(50, 100, 100, 100)#
+z <- c("intcal13","intcal13","intcal13","intcal13" )#
+d <- c(2, 8, 0, 0)#
+#
+fe <- c(5, 6, 7, 8)#
+depth <-c(1, 10, 15, 30)#
+#
+data.stuff <- data.frame(fe, depth)#
+colnames(data.stuff) <- c("Fe", "Depth")#
+#
+age.frame <- data.frame(d, x, y, z)#
+colnames(age.frame) <- c("Depth", "14C Age", "Sigma", "CalCurve")#
+#
+age.subset <- subset(age.frame, !age.frame$Sigma==0)#
+#
+      age.math <- Bchronology(ages=as.numeric(as.vector(age.subset[,2])), ageSds=as.numeric(as.vector(age.subset[,3])), positions=as.numeric(as.vector(age.subset[,1])), positionThickness=rep(0.5, length(age.subset $Sigma)), calCurves= age.subset[,4], burn=2000, predictPositions=as.numeric(as.vector(data.stuff$Depth)))#
+            age.results <- predict(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+age.subset
+x <- c(500, 1000, 2000, 3000)#
+y <- c(50, 100, 100, 100)#
+z <- c("intcal13","intcal13","intcal13","intcal13" )#
+d <- c(2, 8, 0, 0)#
+#
+fe <- c(5, 6, 7, 8)#
+depth <-c(1, 10, 15, 30)#
+#
+data.stuff <- data.frame(fe, depth)#
+colnames(data.stuff) <- c("Fe", "Depth")#
+#
+age.frame <- data.frame(d, x, y, z)#
+colnames(age.frame) <- c("Depth", "14C Age", "Sigma", "CalCurve")#
+#
+age.subset <- subset(age.frame, !age.frame$Sigma==0)
+age.subset
+age.frame
+x
+age.frame <- data.frame(d, x, y, z)
+x <- c(500, 1000, 2000, 3000)#
+y <- c(50, 100, 100, 100)#
+z <- c("intcal13","intcal13","intcal13","intcal13" )#
+d <- c(2, 8, 20, 40)#
+#
+fe <- c(5, 6, 7, 8)#
+depth <-c(1, 10, 15, 30)#
+#
+data.stuff <- data.frame(fe, depth)#
+colnames(data.stuff) <- c("Fe", "Depth")#
+#
+age.frame <- data.frame(d, x, y, z)#
+colnames(age.frame) <- c("Depth", "14C Age", "Sigma", "CalCurve")#
+#
+age.subset <- subset(age.frame, !age.frame$Sigma==0)#
+#
+      age.math <- Bchronology(ages=as.numeric(as.vector(age.subset[,2])), ageSds=as.numeric(as.vector(age.subset[,3])), positions=as.numeric(as.vector(age.subset[,1])), positionThickness=rep(0.5, length(age.subset $Sigma)), calCurves= age.subset[,4], burn=2000, predictPositions=as.numeric(as.vector(data.stuff$Depth)))#
+            age.results <- predict(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+quartz()
+plot(age.math)
+?plot
+head(age.results)
+summary(age.results)
+fe <- c(5, 6, 7, 8,5, 6, 7, 8,5, 6, 7, 8,5, 6, 7, 8)
+length(few)
+length(fe)
+depth <-seq(1, 30, 2)
+length(depth)
+fe <- c(5, 6, 7, 8,5, 6, 7, 8,5, 6, 7, 8,5, 6, 7)#
+depth <-seq(1, 30, 2)#
+#
+data.stuff <- data.frame(fe, depth)#
+colnames(data.stuff) <- c("Fe", "Depth")
+age.results <- predict(age.math, newPositions= data.stuff$Depth, newPositionThicknesses=rep(0.0, length(data.stuff$Depth)))
+head(age.results)
+median(age.results)
+age.vector <- apply(age.results, 1, median)
+age.vector
+age.vector <- apply(age.results, 2, median)
+head(age.vector)
+age.vector
+age.sd <- apply(age.results, 2, sd)
+age.sd
+runApp("~/GitHub/Cloudcore")
 library(shiny)
-runApp("~/Desktop/ArtaxMap App")
-paste("rainbow.colors(", 5, ")")
-runApp("~/Desktop/ArtaxMap App")
-print("terrain.colors", "(", 5, ")", sep="")
-paste("terrain.colors", "(", 5, ")", sep="")
-as.value(paste("terrain.colors", "(", 5, ")", sep=""))
-as.vector(paste("terrain.colors", "(", 5, ")", sep=""))
-noquote(paste("terrain.colors", "(", 5, ")", sep=""))
-runApp("~/Desktop/ArtaxMap App")
-noquote(paste(rainbow, "(",5, ")", sep=""))
-noquote(paste("rainbow", "(",5, ")", sep=""))
-runApp("~/Desktop/ArtaxMap App")
-?noquote
-as.character(paste("rainbow", "(",5, ")", sep=""))
-noquote(paste("rainbow", "(",5, ")", sep=""))
-as.vector(noquote(paste("rainbow", "(",5, ")", sep="")))
-as.vector(noquote(print("rainbow", "(",5, ")", sep="")))
-as.vector(noquote(print("rainbow", "(","5", ")", sep="")))
-?print
-runApp("~/Desktop/ArtaxMap App")
-traceback()
-runApp("~/Desktop/ArtaxMap App")
-?noquote
-terrain
-"terrain"
-noquote("terrain")
-runApp("~/Desktop/ArtaxMap App")
-?paste
-runApp("~/Desktop/ArtaxMap App")
-?paste
-?as.character
-runApp("~/Desktop/ArtaxMap App")
-?scale_fill_gradientn
-?paste
-runApp("~/Desktop/ArtaxMap App")
-testr <- "terrain.colors(10)"
-testr
-proto.fish <- loadWorkbook(file="/Users/lee/Desktop/fossil fish bone.xlsx")#
-fish.sheets <- getSheets(proto.fish)#
-fish.names <- as.vector(names(fish.sheets))#
-#
-fishes <- pblapply(fish.names, function(x) read.xlsx(file="/Users/lee/Desktop/fossil fish bone.xlsx", sheetIndex=x))#
-names(fishes) <- fish.names#
-fishes[[1]] <- NULL#
-#
-fish.melt <- melt(fishes, id="NA.")#
-#
-fish.melt$variable <- as.numeric(substring(fish.melt$variable, 2))#
-colnames(fish.melt) <- c("y", "x", "counts", "Element")#
-fish.melt
-fish.subset <- subset(fish.melt, fish.melt$Element=="Ca Ka1")
-head(fish.subset)
-fish.subset <- subset(fish.melt, fish.melt$Element=="Ca K12")
-head(fish.subset)
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-testr.a <- "terrain.colors(10)"#
-#
-testr <- no.quote(testr.a)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-testr <- print(testr.a)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-testr <- as.character(testr.a)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-?print
-testr <- print(testr.a, quote=TRUE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-testr <- print(testr.a, quote=FALSE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-testr <- as.factor(testr.a, quote=FALSE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-?string
-testr <- string(testr.a, quote=FALSE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-?string
-testr <- as.string(testr.a, quote=FALSE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-library(xtable)
-testr <- as.string(testr.a, quote=FALSE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-?paste
-testr <- paste(testr.a, collapse=TRUE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-?Print
-?print
-testr <- print(testr.a, quote=FALSE)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-testr <- as.vector(testr.a)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=testr) +#
-scale_fill_gradientn(colours=testr) +#
-coord_equal() +#
-theme_classic()
-?as.object
-?obj
-?as.obj
-testr
-no.quote(testr)
-noquote(testr)
-print(testr)
-print(testr[1])
-paste(testr)
-paste(tester, quotes=FALSE)
-paste(testr, quotes=FALSE)
-as.value(testr)
-as.factor(testr)
-as.factor(testr[1])
-as.factor(testr[,1])
-testr
-object(testr)
-??object
-class(testr)
-class(testr) <- value
-is.object(testr)
-as.object(testr)
-get(testr)
-testr.a <- "terrain.colors(10)"#
-#
-testr <- testr.a
-testr
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=get(testr)) +#
-scale_fill_gradientn(colours=get(testr)) +#
-coord_equal() +#
-theme_classic()
-?get
-?as.argument
-?is.argument
-testr.a <- get("terrain.colors(10)")#
-#
-testr <- testr.a
-testr.a <- noquote("colours=terrain.colors(10)")
-test.a
-testr.a
-testr <- testr.a#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(get(testr)) +#
-scale_fill_gradientn(get(testr)) +#
-coord_equal() +#
-theme_classic()
-testr
-print(testr)
-paste(testr)
-get(testr)
-return(testr)
-testr.a <- noquote("colours=terrain.colors(10)")#
-#
-testr <- parse(testr.a)#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(get(testr)) +#
-scale_fill_gradientn(get(testr)) +#
-coord_equal() +#
-theme_classic()
-testr.a <- noquote("colours=terrain.colors(10)")#
-#
-testr <- testr.a#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(eval(testr)) +#
-scale_fill_gradientn(eval(testr)) +#
-coord_equal() +#
-theme_classic()
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(parse(testr)) +#
-scale_fill_gradientn(parse(testr)) +#
-coord_equal() +#
-theme_classic()
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(parse(text=testr)) +#
-scale_fill_gradientn(parse(text=testr)) +#
-coord_equal() +#
-theme_classic()
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(eval(parse(text=testr))) +#
-scale_fill_gradientn(eval(parse(text=testr))) +#
-coord_equal() +#
-theme_classic()
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(eval(parse(text=paste(testr)))) +#
-scale_fill_gradientn(eval(parse(text=paste(testr)))) +#
-coord_equal() +#
-theme_classic()
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=eval(parse(text=paste(testr)))) +#
-scale_fill_gradientn(colours=eval(parse(text=paste(testr)))) +#
-coord_equal() +#
-theme_classic()
-spectral.map
-testr.a <- noquote("terrain.colors(10)")#
-#
-testr <- testr.a#
-#
-spectral.map <- ggplot(fish.subset) +#
-geom_tile(aes(x, y, colour=counts, fill=counts)) +#
-scale_colour_gradientn(colours=eval(parse(text=paste(testr)))) +#
-scale_fill_gradientn(colours=eval(parse(text=paste(testr)))) +#
-coord_equal() +#
-theme_classic()
-spectral.map
-runApp("~/Desktop/ArtaxMap App")
-?textInput
-runApp("~/Desktop/ArtaxMap App")
-?selectInput
-runApp("~/Desktop/ArtaxMap App")
-?testInput
-?textInput
-runApp("~/Desktop/ArtaxMap App")
-?textInput
-?aes
-runApp("~/Desktop/ArtaxMap App")
-traceback()
-runApp("~/Desktop/ArtaxMap App")
-?stat_density2d
-runApp("~/Desktop/ArtaxMap App")
-library(rsconnect)
-deployApp("~/Desktop/ArtaxMap App", appName="ArtaxMap")
+runApp("~/GitHub/Cloudcore")
 library(shiny)
-runApp("~/Desktop/ArtaxMap App")
-#Erase everything that comes before#
-rm(list = ls(all = TRUE))#
-#
-#Compatibility#
-if(.Platform$OS.type=="windows") {#
-    quartz<-function() windows()#
-}#
-###Load Packages#
-library(TTR)#
-library(ggplot2)#
-library(gridExtra)#
-library(scales)#
-library(gtable)#
-library(wq)#
-library(Bchron)#
-library(plyr)#
-library(bcp)#
-#library(mgcv)#
-library(reshape2)#
-library(pbapply)#
-library(xlsx)#
-library(data.table)#
-library(dplyr)#
-library(akima)#
-library(ggmap)#
-library(ggthemes)#
-library(bcp)
-####################################################
-#######Calibration & Confidence Band Function#######
-####################################################
-####Function to organize plots in a window#
-layOut = function(...) {#
-    require(grid)#
-    x <- list(...)#
-    n <- max(sapply(x, function(x) max(x[[2]])))#
-    p <- max(sapply(x, function(x) max(x[[3]])))#
-    pushViewport(viewport(layout = grid.layout(n, p)))#
-    for (i in seq_len(length(x))) {#
-        print(x[[i]][[1]], vp = viewport(layout.pos.row = x[[i]][[2]],#
-        layout.pos.col = x[[i]][[3]]))#
-    }#
-}#
-#####Collapse Dates#
-collapse.the.dates.begin <- function(sites, biogeo, general, dates, sigma) {#
-    n.t <- rep(100, length(sites))#
-    df <- data.frame(sites, biogeo, general, dates, sigma)#
-    colnames(df) <- c("Site", "Biogeo_Uni", "St_Area_NE", "CYrBPunc", "Sigma")#
-    df <- arrange(df, desc(CYrBPunc))#
-    df <- arrange(df, desc(Site))#
-    df <- arrange(df, desc(Biogeo_Uni))#
-    df <- arrange(df, desc(St_Area_NE))#
-    df$Ttest <- c(#
-    (abs(df[1:(nrow(df)-1),4]-df[2:nrow(df), 4]))/((sqrt(df[2:nrow(df), 5]^2 + df[1:(nrow(df)-1),5]^2)*sqrt(1/100))), NA)#
-    df$pvalue <- c((2*pt(df[1:nrow(df),6], 100, lower=FALSE)))#
-    df$Collapse <- rep("No", length(sites))#
-    df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-    df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-    df <- as.data.frame(df)#
-    df <- df[complete.cases(df),]#
-    return(df)#
-}#
-#
-collapse.the.dates.taxa <- function(sites, biogeo, general, dates, sigma, taxa) {#
-    n.t <- rep(100, length(sites))#
-    df <- data.frame(sites, biogeo, general, dates, sigma)#
-    colnames(df) <- c("Site", "Biogeo_Uni", "St_Area_NE", "CYrBPunc", "Sigma", "Taxa")#
-    df <- arrange(df, desc(CYrBPunc))#
-    df <- arrange(df, desc(Site))#
-    df <- arrange(df, desc(Biogeo_Uni))#
-    df <- arrange(df, desc(St_Area_NE))#
-    df$Ttest <- c(#
-    (abs(df[1:(nrow(df)-1),4]-df[2:nrow(df), 4]))/((sqrt(df[2:nrow(df), 5]^2 + df[1:(nrow(df)-1),5]^2)*sqrt(1/100))), NA)#
-    df$pvalue <- c((2*pt(df[1:nrow(df),6], 100, lower=FALSE)))#
-    df$Collapse <- rep("No", length(sites))#
-    df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-    df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-    df <- as.data.frame(df)#
-    df <- df[complete.cases(df),]#
-    return(df)#
-}#
-####Function to organize plots in a window#
-layOut = function(...) {#
-    require(grid)#
-    x <- list(...)#
-    n <- max(sapply(x, function(x) max(x[[2]])))#
-    p <- max(sapply(x, function(x) max(x[[3]])))#
-    pushViewport(viewport(layout = grid.layout(n, p)))#
-    for (i in seq_len(length(x))) {#
-        print(x[[i]][[1]], vp = viewport(layout.pos.row = x[[i]][[2]],#
-        layout.pos.col = x[[i]][[3]]))#
-    }#
-}#
-#
-####Function to maintain significant digits in plot#
-fmt <- function(){#
-    function(x) format(x,nsmall = 2,scientific = FALSE)#
-}#
-####################################################
-#######Calibration & Confidence Band Function#######
-####################################################
-#
-###Multicore apply function with status bar#
-mcpblapply <- function (X, FUN, ..., mc.preschedule = TRUE, mc.set.seed = TRUE,#
-mc.silent = FALSE, mc.cores = getOption("mc.cores", 2L),#
-mc.cleanup = TRUE, mc.allow.recursive = TRUE, USE.NAMES = TRUE, simplify = TRUE)#
-{#
-    FUN <- match.fun(FUN)#
-    if (!is.vector(X) || is.object(X))#
-    X <- as.list(X)#
-    B <- length(X)#
-    if (!(interactive() && dopb() && B >= 1))#
-    return(mclapply(X, FUN, ...#
-    ))#
-    pb <- startpb(0, B)#
-    rval <- vector("list", B)#
-    for (i in 1:B) {#
-        rval[i] <- list(FUN(X[[i]], ...))#
-        setpb(pb, i)#
-    }#
-    close(pb)#
-    names(rval) <- names(X)#
-    rval#
-}#
-#
-mcpbsapply <- function (X, FUN, ..., mc.preschedule = TRUE, mc.set.seed = TRUE,#
-mc.silent = FALSE, mc.cores = getOption("mc.cores", 2L),#
-mc.cleanup = TRUE, mc.allow.recursive = TRUE, USE.NAMES = TRUE, simplify = TRUE)#
-{#
-    FUN <- match.fun(FUN)#
-    answer <- mcpblapply(X = X, FUN = FUN,  ..., USE.NAMES = TRUE)#
-    if (USE.NAMES && is.character(X) && is.null(names(answer)))#
-    names(answer) <- X#
-    if (!identical(simplify, FALSE) && length(answer))#
-    simplify2array(answer, higher = (simplify == "array"))#
-    else answer#
-}#
-#
-mcreplicate <- function(n, expr, simplify = "array", mc.cores = getOption("mc.cores", 2L)) {#
-    mcpbsapply(integer(n), eval.parent(substitute(function(...) expr)), mc.cores = getOption("mc.cores", 2L),#
-    simplify = simplify)#
-}#
-conf.loess <- function(x, sigma, n, reps, xmin, xmax) {#
-    samp.intcal <- rep("intcal13", length(x))#
-    samp.slugdens <- BchronCalibrate(x, sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    res.by <- by(samp.ages$ageGrid, samp.ages$.id, median)#
-    res.t <- t(res.by)#
-    samp.age.grid <- c(samp.ages$ageGrid, xmin, xmax)#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.grid <- sort(samp.age.grid, decreasing=TRUE)#
-    samp.grid <- samp.grid[samp.grid < xmax & samp.grid > xmin]#
-    samp.hist <- hist(samp.grid, breaks=length(time))#
-    samp.hist <- data.frame(time, samp.hist$counts, samp.hist$counts/sum(samp.hist$counts))#
-    colnames(samp.hist) <- c("Age", "Counts", "Density")#
-    #samp.hist <- arrange(samp.all, desc(Age))#
-    makeloess <- function(x, n){#
-        time <- seq(xmin+5, xmax-5, 10)#
-        samp.age <- sample(x, size=n, replace=TRUE)#
-        samp.dist <- sapply(1:n, function(x) rnorm(500, samp.age, 85))#
-        samp.dist <- as.vector(samp.dist)#
-        samp.dist <- c(xmax, xmin, samp.dist)#
-        samp.date <- tapply(samp.dist, cut(samp.dist, length(time)), length)#
-        samp.loess <- lowess(time, samp.date, f=0.15)#
-        samp.fitted <- samp.loess$y#
-        return(samp.fitted)#
-    }#
-    samp.replicate <- (replicate(reps, makeloess(res.t, n)))#
-    samp.replicate <- as.data.frame(samp.replicate)#
-    samp.replicate[is.na(samp.replicate)] <- 0#
-    samp.replicate <- sweep(samp.replicate,2,colSums(samp.replicate),`/`)#
-    samp.results.replicate <- transform(samp.replicate, MEAN=apply(samp.replicate,1, mean, na.rm = TRUE))#
-    samp.results.replicate <- transform(samp.results.replicate, SD=apply(samp.results.replicate,1, sd, na.rm = TRUE))#
-    samp.descriptive <- data.frame(time, samp.results.replicate$MEAN, samp.results.replicate$SD)#
-    colnames(samp.descriptive) <- c("Age", "Mean", "SD")#
-    #samp.descriptive <- arrange(samp.descriptive, desc(Age))#
-    samp.all <- data.frame(time, samp.hist$Density, samp.hist$Counts, samp.descriptive$Mean, samp.descriptive$SD, samp.replicate)#
-    names(samp.all)[names(samp.all)=="time"] <- "Age"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.Mean"] <- "Mean"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.SD"] <- "SD"#
-    names(samp.all)[names(samp.all)=="samp.hist.Density"] <- "Density"#
-    names(samp.all)[names(samp.all)=="samp.hist.Counts"] <- "Counts"#
-    samp.all <- arrange(samp.all, desc(Age))#
-    return(samp.all)#
-}#
-taphonomic.correct <- function(stack.14C.data) {#
-    df <- stack.14C.data#
-    n.t <- 5.726442*(10^6)*(df$Age + 2176.4)^-1.3925309#
-    lambda <- 1.3925309/(2176.4+df$Age)*100#
-    lambda.r <- 1-lambda#
-    n.t.relative <- n.t/128.8192#
-    df$Counts.Corrected <-df$Counts/n.t.relative#
-    count.mod.sum <- sum(df$Counts.Corrected)#
-    df$Density.Corrected <- df$Counts.Corrected/count.mod.sum#
-    return(df)#
-}#
-#
-stack.14C.4D <- function(date, sigma, xmin, xmax, lat, long){#
-    date <- c(date, 100)#
-    sigma <- c(sigma, 50)#
-    lat <- c(lat, 0)#
-    long <- c(long, 0)#
-    date.frame <- data.frame(date, sigma, lat, long)#
-    names(date.frame) <- c("Date", "Sigma", "Lat", "Long")#
-    date.frame <- date.frame[complete.cases(date.frame),]#
-    date.sub <- subset(date.frame, (xmin-500) < Date & Date < (xmax + 500))#
-    ids.cus = paste("date", 1:length(date.sub$Date), sep = "")#
-    coord.sub <- data.frame(ids.cus, date.sub$Lat, date.sub$Long)#
-    names(coord.sub) <- c(".id", "Lat", "Long")#
-    samp.intcal <- rep("intcal13", length(date.sub$Date))#
-    samp.slugdens <- BchronCalibrate(date.sub$Date, date.sub$Sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.mean <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, mean))#
-    samp.sd <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, sd))#
-    samp.frame <- data.frame(samp.mean, samp.sd)#
-    colnames(samp.frame) <- c("Mean", "Sd")#
-    samp.frame$Min <- samp.frame$Mean-date.sub$Sigma#
-    samp.frame$Max <- samp.frame$Mean+date.sub$Sigma#
-    samp.frame$Lat <- coord.sub$Lat#
-    samp.frame$Long <- coord.sub$Long#
-    samp.frame <- data.table(samp.frame)#
-    lat.frame <- samp.frame[, list(Lat=Lat, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    long.frame <- samp.frame[, list(Long=Long, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    fin.frame <- data.frame(lat.frame$Lat, long.frame$Long, lat.frame$ageGrid)#
-    colnames(fin.frame) <- c("Lat", "Long", "ageGrid")#
-    return(fin.frame)#
-}#
-#######
-stack.14C <- function(x, sigma, xmin, xmax, taxa){#
-    samp.intcal <- rep("intcal13", length(x))#
-    samp.slugdens <- BchronCalibrate(x, sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    fill <- seq(xmin, xmax, 1)#
-    samp.age.grid <- c(samp.ages$ageGrid, fill)#
-    samp.grid <- sort(samp.age.grid, decreasing=TRUE)#
-    samp.grid <- samp.grid[samp.grid < xmax & samp.grid > xmin]#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.hist <- hist(samp.grid, breaks=length(time))#
-    samp.hist <- data.frame(time, samp.hist$counts, samp.hist$counts/sum(samp.hist$counts))#
-    colnames(samp.hist) <- c("Age", "Counts", "Density")#
-    corrected.samp.hist <- taphonomic.correct(samp.hist)#
-    return(corrected.samp.hist)#
-}#
-stack.14C.taxa <- function(date, sigma, xmin, xmax, lat, long, taxa){#
-    date <- as.numeric(as.vector(c(date, 49000)))#
-    sigma <- as.numeric(as.vector(c(sigma, 4900)))#
-    lat <- c(lat, 0)#
-    long <- c(long, 0)#
-    taxa <- as.vector(c(taxa, "blank"))#
-    date.frame <- data.frame(date, sigma, lat, long, taxa)#
-    names(date.frame) <- c("Date", "Sigma", "Lat", "Long", "Taxa")#
-    date.frame <- date.frame[complete.cases(date.frame),]#
-    date.sub <- subset(date.frame, (xmin) < Date & Date < (xmax))#
-    ids.cus = paste("date", 1:length(date.sub$Date), sep = "")#
-    coord.sub <- data.frame(ids.cus, date.sub$Lat, date.sub$Long, date.sub$Taxa)#
-    names(coord.sub) <- c(".id", "Lat", "Long", "Taxa")#
-    samp.intcal <- rep("intcal13", length(date.sub$Date))#
-    samp.slugdens <- BchronCalibrate(date.sub$Date, date.sub$Sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.mean <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, mean))#
-    samp.sd <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, sd))#
-    samp.frame <- data.frame(samp.mean, samp.sd)#
-    colnames(samp.frame) <- c("Mean", "Sd")#
-    samp.frame$Min <- samp.frame$Mean-date.sub$Sigma#
-    samp.frame$Max <- samp.frame$Mean+date.sub$Sigma#
-    samp.frame$Lat <- coord.sub$Lat#
-    samp.frame$Long <- coord.sub$Long#
-    samp.frame$Taxa <- coord.sub$Taxa#
-    samp.frame <- data.table(samp.frame)#
-    lat.frame <- samp.frame[, list(Lat=Lat, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    long.frame <- samp.frame[, list(Long=Long, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    taxa.frame <- samp.frame[, list(Taxa=Taxa, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    fin.frame <- data.frame(taxa.frame$Taxa, lat.frame$Lat, long.frame$Long, lat.frame$ageGrid)#
-    colnames(fin.frame) <- c("Taxa", "Lat", "Long", "ageGrid")#
-    return(fin.frame)#
-}#
-#
-taxa.data <- function(stack.14C.taxa.object, taxa.names, xmin, xmax) {#
-    temp.df.1 <- subset(stack.14C.taxa.object, stack.14C.taxa.object$Taxa==taxa.names)#
-    temp.df <- data.frame(temp.df.1$ageGrid, factor(temp.df.1$Taxa))#
-    colnames(temp.df) <- c("ageGrid", "Taxa")#
-    temp.list <- split(temp.df$ageGrid, f=temp.df$Taxa)#
-    temp.list <- rapply(temp.list, f=sort, how="list", decreasing=TRUE)#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.hist.list <- rapply(temp.list, f=hist, how="list", breaks=length(time))#
-    samp.mids <- sapply(samp.hist.list, "[[", 4)#
-    samp.counts <- sapply(samp.hist.list, "[[", 2)#
-    samp.density <- sapply(samp.hist.list, "[[", 3)#
-    samp.mids.df <- ldply(samp.mids, data.frame)#
-    samp.counts.df <- ldply(samp.counts, data.frame)#
-    samp.density.df <- ldply(samp.density, data.frame)#
-    samp.hist <- data.frame(samp.mids.df[1], samp.mids.df[2], samp.counts.df[2], samp.density.df[2])#
-    colnames(samp.hist) <- c("Taxa", "Age", "Counts", "Density")#
-    corrected.samp.hist <- taphonomic.correct(samp.hist)#
-    return(corrected.samp.hist)#
-}#
-#
-taxa.data.single <- function(stack.14C.taxa.object, taxa.names, xmin, xmax) {#
-    temp.df.1 <- subset(stack.14C.taxa.object, stack.14C.taxa.object$Taxa==taxa.names)#
-    temp.df <- data.frame(temp.df.1$ageGrid, factor(temp.df.1$Taxa))#
-    colnames(temp.df) <- c("ageGrid", "Taxa")#
-    temp.list <- split(temp.df$ageGrid, f=temp.df$Taxa)#
-    temp.list <- rapply(temp.list, f=sort, how="list", decreasing=TRUE)#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.hist.list <- rapply(temp.list, f=hist, how="list", breaks=length(time))#
-    samp.mids <- sapply(samp.hist.list, "[[", 4)#
-    samp.counts <- sapply(samp.hist.list, "[[", 2)#
-    samp.density <- sapply(samp.hist.list, "[[", 3)#
-    samp.mids.df <- ldply(samp.mids, data.frame)#
-    samp.counts.df <- ldply(samp.counts, data.frame)#
-    samp.density.df <- ldply(samp.density, data.frame)#
-    samp.hist <- data.frame(samp.mids.df[1], samp.counts.df[1], samp.density.df[1])#
-    colnames(samp.hist) <- c("Age", "Counts", "Density")#
-    corrected.samp.hist <- taphonomic.correct(samp.hist)#
-    return(corrected.samp.hist)#
-}#
-median.stack.14C <- function(x, sigma, xmin, xmax){#
-    samp.intcal <- rep("intcal13", length(x))#
-    samp.slugdens <- BchronCalibrate(x, sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.median <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, median))#
-    medians.all <-as.vector(samp.median[,1])#
-    n <- length(medians.all)#
-    medians <- medians.all[medians.all < xmax & medians.all > xmin]#
-    return(medians)#
-}#
-######Function to Generate Confidence Bands around SCDRD#
-conf.cal.loess <- function(dates, sigma, n, reps, sites, xmin, xmax, ..., cores = getOption("mc.cores", 2L), collapse.dates=FALSE) {#
-    collapse.the.dates <- function(sites, dates, sigma) {#
-        n.t <- rep(100, length(sites))#
-        df <- data.frame(sites, dates, sigma)#
-        colnames(df) <- c("Sites", "Date", "Sigma")#
-        df <- arrange(df, desc(Date))#
-        df <- arrange(df, desc(Sites))#
-        df$Ttest <- c(#
-        (abs(df[1:(nrow(df)-1),2]-df[2:nrow(df), 2]))/((sqrt(df[2:nrow(df), 3]^2 + df[1:(nrow(df)-1),3]^2)*sqrt(1/100))), NA)#
-        df$pvalue <- c((2*pt(df[1:nrow(df),4], 100, lower=FALSE)))#
-        df$Collapse <- rep("No", length(sites))#
-        df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-        df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-        df <- as.data.frame(df)#
-        df <- df[complete.cases(df),]#
-        return(df)#
-    }#
-    uncollapse.the.dates <- function(sites, dates, sigma) {#
-        df <- data.frame(sites, dates, sigma)#
-        colnames(df) <- c("Sites", "Date", "Sigma")#
-        return(df)#
-    }#
-    date.data <- if(isTRUE(collapse.dates)){#
-        collapse.the.dates(sites, dates, sigma)#
-    } else {#
-        uncollapse.the.dates(sites, dates, sigma)#
-    }#
-    samp.intcal <- rep("intcal13", length(date.data$Date))#
-    samp.slugdens <- BchronCalibrate(date.data$Date, date.data$Sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.mean <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, mean))#
-    samp.sd <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, sd))#
-    samp.frame <- data.frame(samp.mean, samp.sd, samp.ages$.id)#
-    colnames(samp.frame) <- c("Mean", "Sd", "Id")#
-    samp.frame$Min <- samp.frame$Mean-date.sub$Sigma*2#
-    samp.frame$Max <- samp.frame$Mean+date.sub$Sigma*2#
-    id.frame <- samp.frame[, list(Id=Id, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    colnames(id.frame) <- c("Id", "ageGrid")#
-    res.by <- by(samp.frame$ageGrid, samp.frame$.id, median)#
-    res.t <- t(res.by)#
-    fill <- seq(xmin, xmax, 1)#
-    samp.age.grid <- c(samp.frame$ageGrid, fill)#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.grid <- sort(samp.age.grid, decreasing=TRUE)#
-    samp.grid <- samp.grid[samp.grid < xmax & samp.grid > xmin]#
-    samp.hist <- hist(samp.grid, breaks=length(time))#
-    samp.hist <- data.frame(time, samp.hist$counts, samp.hist$counts/sum(samp.hist$counts))#
-    colnames(samp.hist) <- c("Age", "Counts", "Density")#
-    #samp.hist <- arrange(samp.all, desc(Age))#
-    makeloess <- function(dates, n){#
-        time <- seq(xmin+5, xmax-5, 10)#
-        n.s <- length(dates)#
-        samp.order <- sample(n.s, size=n, replace=TRUE)#
-        samp.dist.n <- samp.slugdens[samp.order]#
-        temp.ages <- ldply(samp.dist.n, data.frame)#
-        temp.age.grid <- c(temp.ages$ageGrid, fill)#
-        temp.grid <- temp.age.grid[temp.age.grid < xmax & samp.grid > xmin]#
-        samp.dist <- c(fill, temp.grid)#
-        samp.dist <- as.vector(samp.dist)#
-        samp.dist <- c(xmax, xmin, samp.dist)#
-        samp.date <- tapply(samp.dist, cut(samp.dist, length(time)), length)#
-        samp.loess <- lowess(time, samp.date, f=0.15)#
-        samp.fitted <- samp.loess$y#
-        return(samp.fitted)#
-    }#
-    samp.replicate <- (mcreplicate(reps, makeloess(dates, n)))#
-    samp.replicate.dat <- as.data.frame(samp.replicate)#
-    samp.replicate.dat[is.na(samp.replicate.dat)] <- 0#
-    samp.replicated <- sweep(samp.replicate.dat,2,colSums(samp.replicate.dat),`/`)#
-    samp.results.replicated.m <- transform(samp.replicated, MEAN=apply(X=samp.replicated, MARGIN=1, FUN=mean, na.rm = TRUE))#
-    samp.results.replicated.s <- transform(samp.replicated, SD=apply(X=samp.replicated, MARGIN=1, FUN=sd, na.rm = TRUE))#
-    samp.descriptive <- data.frame(time, samp.results.replicated.m$MEAN, samp.results.replicated.s$SD)#
-    colnames(samp.descriptive) <- c("Age", "Mean", "SD")#
-    #samp.descriptive <- arrange(samp.descriptive, desc(Age))#
-    samp.all <- data.frame(time, samp.hist$Density, samp.hist$Counts, samp.descriptive$Mean, samp.descriptive$SD)#
-    names(samp.all)[names(samp.all)=="time"] <- "Age"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.Mean"] <- "Mean"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.SD"] <- "SD"#
-    names(samp.all)[names(samp.all)=="samp.hist.Density"] <- "Density"#
-    names(samp.all)[names(samp.all)=="samp.hist.Counts"] <- "Counts"#
-    samp.all <- arrange(samp.all, desc(Age))#
-    return(samp.all)#
-}#
-######Function to Generate Confidence Bands around SCDRD#
-conf.cal.loess.bad <- function(dates, sigma, n, reps, sites, xmin, xmax, ..., cores = getOption("mc.cores", 2L), collapse.dates=FALSE) {#
-    collapse.the.dates <- function(sites, dates, sigma) {#
-        n.t <- rep(100, length(sites))#
-        df <- data.frame(sites, dates, sigma)#
-        colnames(df) <- c("Sites", "Date", "Sigma")#
-        df <- arrange(df, desc(Date))#
-        df <- arrange(df, desc(Sites))#
-        df$Ttest <- c(#
-        (abs(df[1:(nrow(df)-1),2]-df[2:nrow(df), 2]))/((sqrt(df[2:nrow(df), 3]^2 + df[1:(nrow(df)-1),3]^2)*sqrt(1/100))), NA)#
-        df$pvalue <- c((2*pt(df[1:nrow(df),4], 100, lower=FALSE)))#
-        df$Collapse <- rep("No", length(sites))#
-        df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-        df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-        df <- as.data.frame(df)#
-        df <- df[complete.cases(df),]#
-        return(df)#
-    }#
-    uncollapse.the.dates <- function(sites, dates, sigma) {#
-        df <- data.frame(sites, dates, sigma)#
-        colnames(df) <- c("Sites", "Date", "Sigma")#
-        return(df)#
-    }#
-    date.data <- if(isTRUE(collapse.dates)){#
-        collapse.the.dates(sites, dates, sigma)#
-    } else {#
-        uncollapse.the.dates(sites, dates, sigma)#
-    }#
-    samp.intcal <- rep("intcal13", length(date.data$Date))#
-    samp.slugdens <- BchronCalibrate(date.data$Date, date.data$Sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.mean <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, mean))#
-    samp.sd <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, sd))#
-    samp.frame <- data.frame(samp.mean, samp.sd, samp.ages$.id)#
-    colnames(samp.frame) <- c("Mean", "Sd", "Id")#
-    samp.frame$Min <- samp.frame$Mean-date.sub$Sigma*2#
-    samp.frame$Max <- samp.frame$Mean+date.sub$Sigma*2#
-    id.frame <- samp.frame[, list(Id=Id, ageGrid = seq(from=trunc(Min), to=trunc(Max))), by = 1:nrow(samp.frame)]#
-    colnames(id.frame) <- c("Id", "ageGrid")#
-    res.by <- by(samp.frame$ageGrid, samp.frame$.id, median)#
-    res.t <- t(res.by)#
-    fill <- seq(xmin, xmax, 1)#
-    samp.age.grid <- c(samp.frame$ageGrid, fill)#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.grid <- sort(samp.age.grid, decreasing=TRUE)#
-    samp.grid <- samp.grid[samp.grid < xmax & samp.grid > xmin]#
-    samp.hist <- hist(samp.grid, breaks=length(time))#
-    samp.hist <- data.frame(time, samp.hist$counts, samp.hist$counts/sum(samp.hist$counts))#
-    colnames(samp.hist) <- c("Age", "Counts", "Density")#
-    #samp.hist <- arrange(samp.all, desc(Age))#
-    makeloess <- function(dates, n){#
-        time <- seq(xmin+5, xmax-5, 10)#
-        n.s <- length(dates)#
-        samp.order <- sample(n.s, size=n, replace=TRUE)#
-        samp.dist.n <- samp.slugdens[samp.order]#
-        temp.ages <- ldply(samp.dist.n, data.frame)#
-        temp.age.grid <- c(temp.ages$ageGrid, fill)#
-        temp.grid <- temp.age.grid[temp.age.grid < xmax & samp.grid > xmin]#
-        samp.dist <- c(fill, temp.grid)#
-        samp.dist <- as.vector(samp.dist)#
-        samp.dist <- c(xmax, xmin, samp.dist)#
-        samp.date <- tapply(samp.dist, cut(samp.dist, length(time)), length)#
-        samp.loess <- lowess(time, samp.date, f=0.15)#
-        samp.fitted <- samp.loess$y#
-        return(samp.fitted)#
-    }#
-    samp.replicate <- (mcreplicate(reps, makeloess(dates, n)))#
-    samp.replicate.dat <- as.data.frame(samp.replicate)#
-    samp.replicate.dat[is.na(samp.replicate.dat)] <- 0#
-    samp.replicated <- sweep(samp.replicate.dat,2,colSums(samp.replicate.dat),`/`)#
-    samp.results.replicated.m <- transform(samp.replicated, MEAN=apply(X=samp.replicated, MARGIN=1, FUN=mean, na.rm = TRUE))#
-    samp.results.replicated.s <- transform(samp.replicated, SD=apply(X=samp.replicated, MARGIN=1, FUN=sd, na.rm = TRUE))#
-    samp.descriptive <- data.frame(time, samp.results.replicated.m$MEAN, samp.results.replicated.s$SD)#
-    colnames(samp.descriptive) <- c("Age", "Mean", "SD")#
-    #samp.descriptive <- arrange(samp.descriptive, desc(Age))#
-    samp.all <- data.frame(time, samp.hist$Density, samp.hist$Counts, samp.descriptive$Mean, samp.descriptive$SD)#
-    names(samp.all)[names(samp.all)=="time"] <- "Age"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.Mean"] <- "Mean"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.SD"] <- "SD"#
-    names(samp.all)[names(samp.all)=="samp.hist.Density"] <- "Density"#
-    names(samp.all)[names(samp.all)=="samp.hist.Counts"] <- "Counts"#
-    samp.all <- arrange(samp.all, desc(Age))#
-    return(samp.all)#
-}#
-#
-###Traditional SCDPD#
-BchronDensityCollapse <- function (dates, sigma, sites,  dfs = rep(100, length(dates)), numMix = 30,#
-iterations = 10000, burn = 2000, thin = 8, updateAges = FALSE, collapse.dates=FALSE)#
-{#
-    collapse.the.dates <- function(sites, dates, sigma) {#
-        n.t <- rep(100, length(sites))#
-        df <- data.frame(sites, dates, sigma)#
-        colnames(df) <- c("Sites", "Date", "Sigma")#
-        df <- arrange(df, desc(Date))#
-        df <- arrange(df, desc(Sites))#
-        df$Ttest <- c(#
-        (abs(df[1:(nrow(df)-1),2]-df[2:nrow(df), 2]))/((sqrt(df[2:nrow(df), 3]^2 + df[1:(nrow(df)-1),3]^2)*sqrt(1/100))), NA)#
-        df$pvalue <- c((2*pt(df[1:nrow(df),4], 100, lower=FALSE)))#
-        df$Collapse <- rep("No", length(sites))#
-        df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-        df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-        return(df)#
-    }#
-    uncollapse.the.dates <- function(sites, dates, sigma) {#
-        df <- data.frame(sites, dates, sigma)#
-        colnames(df) <- c("Sites", "Date", "Sigma")#
-        return(df)#
-    }#
-    date.data <- if(isTRUE(collapse.dates)){#
-        collapse.the.dates(sites, dates, sigma)#
-    } else {#
-        uncollapse.the.dates(sites, dates, sigma)#
-    }#
-    pathToCalCurves = system.file("data",#
-    package = "Bchron")#
-    calCurves <- rep("intcal13", length(date.data$Date))#
-    ages <- date.data$Date#
-    ageSds <- date.data$Sigma#
-    if (length(ages) != length(ageSds))#
-    stop("ages and 1-sigma errors must be same length")#
-    if (length(ages) != length(calCurves))#
-    stop("ages and Calibration curves must be same length")#
-    x = BchronCalibrate(ages = ages, ageSds = ageSds, calCurves = calCurves,#
-    pathToCalCurves = pathToCalCurves, eps = 0, dfs = rep(100,#
-    length(ages)))#
-    xSmall = BchronCalibrate(ages = ages, ageSds = ageSds, calCurves = calCurves,#
-    pathToCalCurves = pathToCalCurves, dfs = rep(100, length(ages)))#
-    n = length(x)#
-    thetaRange = range(xSmall[[1]]$ageGrid)#
-    for (i in 2:n) thetaRange = range(c(thetaRange, xSmall[[i]]$ageGrid))#
-    offset = vector(length = n)#
-    for (i in 1:n) {#
-        offset[i] = ifelse(x[[i]]$calCurve == "normal", 61, 0)#
-    }#
-    gauss <- function(x, mu, sig) {#
-        u <- (x - mu)/sig#
-        y <- exp(-u * u/2)#
-        y#
-    }#
-    gbase <- function(x, mus) {#
-        sig <- (mus[2] - mus[1])/2#
-        G <- outer(x, mus, gauss, sig)#
-        G#
-    }#
-    clrInv = function(phi) {#
-        return(exp(phi)/sum(exp(phi)))#
-    }#
-    J = numMix#
-    mu = seq(thetaRange[1], thetaRange[2], length = numMix)#
-    theta = vector(length = n)#
-    for (j in 1:n) theta[j] = round(stats::rnorm(1, mean = x[[j]]$ageGrid[match(max(x[[j]]$densities),#
-    x[[j]]$densities)], sd = ageSds[j]), 3)#
-    phi = c(stats::runif(J - 1, -10, 10), 0)#
-    p = as.numeric(clrInv(phi))#
-    G = gbase(theta, mu)#
-    remaining = (iterations - burn)/thin#
-    thetaStore = matrix(ncol = length(theta), nrow = remaining)#
-    pStore = matrix(ncol = J, nrow = remaining)#
-    thetaAll = matrix(NA, ncol = n, nrow = iterations)#
-    for (j in 1:n) thetaAll[, j] = sample(xSmall[[j]]$ageGrid,#
-    size = iterations, prob = xSmall[[j]]$densities, replace = TRUE)#
-    mu2 = mu#
-    sigma2 = (mu[2] - mu[1])/2#
-    my_dnorm = function(x) stats::dnorm(x, mean = mu2, sd = sigma2)#
-    pb = utils::txtProgressBar(min = 1, max = iterations, style = 3,#
-    width = 60, title = "Running BchronDensity")#
-    for (i in 1:iterations) {#
-        utils::setTxtProgressBar(pb, i)#
-        if (i > burn & i%%thin == 0) {#
-            ind = (i - burn)/thin#
-            thetaStore[ind, ] = theta#
-            pStore[ind, ] = p#
-        }#
-        if (updateAges) {#
-            for (j in 1:n) {#
-                thetaNew = round(stats::rnorm(1, theta[j], 0.5),#
-                3)#
-                thetaNewMatch = as.integer(thetaNew + offset[j]) +#
-                1#
-                thetaNewLogDens = max(log(x[[j]]$densities[thetaNewMatch]),#
-                -1e+06)#
-                priorNew.dens = sum(p * stats::dnorm(thetaNew,#
-                mean = mu2, sd = sigma2))#
-                thetaMatch = as.integer(theta[j] + offset[j]) +#
-                1#
-                thetaLogDens = max(log(x[[j]]$densities[thetaMatch]),#
-                -1e+06)#
-                priorDens = sum(p * stats::dnorm(theta[j], mean = mu2,#
-                sd = sigma2))#
-                logRtheta = thetaNewLogDens - thetaLogDens +#
-                log(priorNew.dens) - log(priorDens)#
-                if (stats::runif(1) < exp(logRtheta))#
-                theta[j] = thetaNew#
-            }#
-        }#
-        else {#
-            theta = thetaAll[i, ]#
-        }#
-        for (j in 1:(J - 1)) {#
-            phiNew = stats::rnorm(1, phi[j], 1)#
-            phiAllNew = phi#
-            phiAllNew[j] = phiNew#
-            pNew = as.numeric(clrInv(phiAllNew))#
-            phiNewLogDens = sum(log(G %*% pNew))#
-            phiLogDens = sum(log(G %*% p))#
-            logRphi = phiNewLogDens - phiLogDens + stats::dunif(phiNew,#
-            -10, 10, log = TRUE) - stats::dunif(phi[j], -10,#
-            10, log = TRUE)#
-            if (stats::runif(1) < exp(logRphi)) {#
-                phi[j] = phiNew#
-                p = as.numeric(clrInv(phi))#
-            }#
-        }#
-    }#
-    output = list(theta = thetaStore, p = pStore, mu = mu, calAges = xSmall,#
-    G = G)#
-    class(output) = "BchronDensityRun"#
-    return(output)#
-}#
-#
-###Function to modify existing SCDPD from BchronDensity (modified from Bchron)#
-SlugDens.t <- function (x, xmin, xmax)#
-{#
-    n = length(x$calAges)#
-    thetaRange = range(x$calAges[[1]]$ageGrid)#
-    for (i in 2:n) thetaRange = range(c(thetaRange, x$calAges[[i]]$ageGrid))#
-    dateGrid = seq(xmin, xmax, length = 1000)#
-    gauss <- function(x, mu, sig) {#
-        u <- (x - mu)/sig#
-        y <- exp(-u * u/2)#
-        y#
-    }#
-    gbase <- function(x, mus) {#
-        sig <- (mus[2] - mus[1])/2#
-        G <- outer(x, mus, gauss, sig)#
-        G#
-    }#
-    Gstar = gbase(dateGrid, x$mu)#
-    dens = vector(length = length(dateGrid))#
-    for (i in 1:nrow(x$p)) {#
-        dens = dens + Gstar %*% x$p[i, ]#
-    }#
-    densFinal = dens/sum(dens)#
-    slugbase <- data.frame(dateGrid,densFinal)#
-    colnames(slugbase) <- c("Age", "Density")#
-    slugbase <- arrange(slugbase, desc(Age))#
-    return(slugbase)#
-}#
-#
-SlugSig <- function(x, sigma, n, reps, xmin, xmax) {#
-    time <- seq(xmin+5, xmax-5, 10)#
-    samp.intcal <- rep("intcal13", length(x))#
-    samp.slugdens <- BchronDensity(x, sigma, samp.intcal, numMix = 30, iterations=10000, burn=2000, thin=8, updateAges=FALSE)#
-    samp.hist <- SlugDens.t(samp.slugdens, xmin, xmax)#
-    makeloess <- function(x, n){#
-        time <- seq(xmin+5, xmax-5, 10)#
-        samp.14C <- sample(x, size=n, replace=TRUE)#
-        samp.sig <- sample(sigma, size=n, replace=TRUE)#
-        samp.dist.n <- BchronDensity(samp.14C, samp.sig, rep("intcal13", n), numMix = 30, iterations=10000, burn=2000, thin=8, updateAges=FALSE)#
-        samp.dist <- SlugDens.t(samp.dist.n, xmin, xmax)#
-        samp.loess <- lowess(samp.dist$Age, samp.dist$Density, f=0.15)#
-        samp.fitted <- samp.loess$y#
-        return(samp.fitted)#
-    }#
-    samp.replicate <- (pbreplicate(reps, makeloess(x, n)))#
-    samp.replicate <- as.data.frame(samp.replicate)#
-    samp.replicate[is.na(samp.replicate)] <- 0#
-    samp.replicate <- sweep(samp.replicate,2,colSums(samp.replicate),`/`)#
-    samp.results.replicate <- transform(samp.replicate, MEAN=apply(samp.replicate,1, mean, na.rm = TRUE))#
-    samp.results.replicate <- transform(samp.results.replicate, SD=apply(samp.results.replicate,1, sd, na.rm = TRUE))#
-    samp.descriptive <- data.frame(samp.hist$Age, samp.results.replicate$MEAN, samp.results.replicate$SD)#
-    colnames(samp.descriptive) <- c("Age", "Mean", "SD")#
-    #samp.descriptive <- arrange(samp.descriptive, desc(Age))#
-    samp.all <- data.frame(samp.hist$Age, samp.hist$Density, samp.descriptive$Mean, samp.descriptive$SD, samp.replicate)#
-    names(samp.all)[names(samp.all)=="samp.hist.Age"] <- "Age"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.Mean"] <- "Mean"#
-    names(samp.all)[names(samp.all)=="samp.descriptive.SD"] <- "SD"#
-    names(samp.all)[names(samp.all)=="samp.hist.Density"] <- "Density"#
-    samp.all <- arrange(samp.all, desc(Age))#
-    return(samp.all)#
-}#
-####Function to maintain significant digits in plot#
-fmt <- function(){#
-    function(x) format(x,nsmall = 4,scientific = FALSE)#
-}#
-collapse.the.dates.begin <- function(sites, region, taxa, dates, sigma, lat, long, datemin, datemax) {#
-    n.t <- rep(100, length(sites))#
-    df.1 <- data.frame(sites, region, dates, sigma, lat, long)#
-    colnames(df.1) <- c("Site", "Region", "X14C.year", "Sigma", "Lat", "Long")#
-    df <- subset(df.1, df.1$X14C.year < datemax & df.1$X14C.year > datemin)#
-    df <- arrange(df, desc(X14C.year))#
-    df <- arrange(df, desc(Site))#
-    df <- arrange(df, desc(Region))#
-    df$Ttest <- c(#
-    (abs(df[1:(nrow(df)-1),3]-df[2:nrow(df), 3]))/((sqrt(df[2:nrow(df), 4]^2 + df[1:(nrow(df)-1),4]^2)*sqrt(1/100))), NA)#
-    df$pvalue <- c((2*pt(df[1:nrow(df),7], 100, lower=FALSE)))#
-    df$Collapse <- rep("No", length(df$Site))#
-    df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-    df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-    df <- as.data.frame(df)#
-    df <- df[complete.cases(df),]#
-    return(df)#
-}#
-collapse.the.dates.taxa <- function(sites, region, taxa, dates, sigma, lat, long, datemin, datemax) {#
-    n.t <- rep(100, length(sites))#
-    df.1 <- data.frame(sites, region, dates, sigma, lat, long, taxa)#
-    colnames(df.1) <- c("Site", "Region", "X14C.year", "Sigma", "Lat", "Long", "Taxa")#
-    df <- subset(df.1, df.1$X14C.year < datemax & df.1$X14C.year > datemin)#
-    df <- arrange(df, desc(X14C.year))#
-    df <- arrange(df, desc(Site))#
-    df <- arrange(df, desc(Region))#
-    df$Ttest <- c(#
-    (abs(df[1:(nrow(df)-1),3]-df[2:nrow(df), 3]))/((sqrt(df[2:nrow(df), 4]^2 + df[1:(nrow(df)-1),4]^2)*sqrt(1/100))), NA)#
-    df$pvalue <- c((2*pt(df[1:nrow(df),8], 100, lower=FALSE)))#
-    df$Collapse <- rep("No", length(df$Site))#
-    df <- transform(df, Collapse = ifelse(pvalue > 0.05, "Yes", Collapse))#
-    df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-    df <- as.data.frame(df)#
-    df <- df[complete.cases(df),]#
-    return(df)#
-}#
-#
-site.median <- function(sites, region, dates, sigma) {#
-    n.t <- rep(100, length(sites))#
-    df <- data.frame(sites, region, dates, sigma)#
-    colnames(df) <- c("Site", "Region", "X14C.year", "Sigma")#
-    df <- arrange(df, desc(X14C.year))#
-    df <- arrange(df, desc(Region))#
-    df <- arrange(df, desc(Site))#
-    df$Collapse <- rep("No", length(sites))#
-    df <- transform(df, Collapse = ifelse(df[nrow(df)] > 0.05, "Yes", Collapse))#
-    df <- df[!(df$Collapse=="Yes" & df[1:(nrow(df)-1),1]==df[2:nrow(df), 1]),]#
-    df <- as.data.frame(df)#
-    df <- df[complete.cases(df),]#
-    return(df)#
-}#
-site.time <- function(sites, dates, sigma, xmin, xmax, time) {#
-    df <- data.frame(sites, dates, sigma)#
-    colnames(df) <- c("Site",  "X14C.year", "Sigma")#
-    df <- arrange(df, desc(X14C.year))#
-    df <- arrange(df, desc(Site))#
-    site.frame <- aggregate(x=df$X14C.year, by=list(df$Site), FUN=mean)#
-    site.vector <- site.frame$x#
-    site.frame.sig <- aggregate(x=df$Sigma, by=list(df$Site), FUN=mean)#
-    site.vector.sig <- site.frame.sig$x#
-    samp.intcal <- rep("intcal13", length(site.vector))#
-    samp.slugdens <- BchronCalibrate(site.vector, site.vector.sig, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.median <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, median))#
-    medians.all <-as.vector(samp.median[,1])#
-    medians <- medians.all[medians.all < xmax & medians.all > xmin]#
-    median.simple <- round((medians/100000), digits=2)*100000#
-    median.table <- table(median.simple)#
-    median.values <- as.numeric(paste(median.table))#
-    median.frame <- data.frame(t(median.values))#
-    colnames(median.frame) <- names(median.table)#
-    median.t <- data.frame(t(median.frame))#
-    median.df <- data.frame(add_rownames(median.t, "VALUE"))#
-    colnames(median.df) <- c("Millenium", "Site")#
-    median.df <- median.df[with(median.df, order(as.numeric(Millenium))), ]#
-    null <- rep(0, length(time))#
-    null.frame <- t(data.frame(null))#
-    colnames(null.frame) <- time#
-    null.t <- data.frame(t(null.frame))#
-    null.df <- data.frame(add_rownames(null.t, "VALUE"))#
-    colnames(null.df) <- c("Millenium", "Site")#
-    all.frame <- merge(null.df, median.df, all=TRUE, by="Millenium")#
-    all.frame[is.na(all.frame)] <- 0#
-    all.frame <- all.frame[with(all.frame, order(as.numeric(Millenium))), ]#
-    the.result <- data.frame(all.frame$Millenium, all.frame$Site.y)#
-    colnames(the.result) <- c("Millenium", "Sites")#
-    scaled <- as.vector(apply(data.frame(the.result$Sites), 2, function(x) scale(x)))#
-    scaled.mean <- mean(scaled)#
-    scaled.sd <- sd(scaled)#
-    the.result$z.score <- (scaled-scaled.mean)/scaled.sd#
-    the.result$p.value <- pnorm(the.result$z.score, lower.tail=FALSE)#
-    return(format(the.result, digits=2))#
-}#
-median.stack.14C <- function(dates, sigma, sites, xmin, xmax, time){#
-    samp.intcal <- rep("intcal13", length(dates))#
-    samp.slugdens <- BchronCalibrate(dates, sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.median <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, median))#
-    medians.all <-as.vector(samp.median[,1])#
-    medians <- medians.all[medians.all < xmax & medians.all > xmin]#
-    median.simple <- round((medians/100000), digits=2)*100000#
-    median.table <- table(median.simple)#
-    median.values <- as.numeric(paste(median.table))#
-    median.frame <- data.frame(t(median.values))#
-    colnames(median.frame) <- names(median.table)#
-    median.t <- data.frame(t(median.frame))#
-    median.df <- data.frame(add_rownames(median.t, "VALUE"))#
-    colnames(median.df) <- c("Millenium", "Site")#
-    median.df <- median.df[with(median.df, order(as.numeric(Millenium))), ]#
-    null <- rep(0, length(time))#
-    null.frame <- t(data.frame(null))#
-    colnames(null.frame) <- time#
-    null.t <- data.frame(t(null.frame))#
-    null.df <- data.frame(add_rownames(null.t, "VALUE"))#
-    colnames(null.df) <- c("Millenium", "Site")#
-    all.frame <- merge(null.df, median.df, all=TRUE, by="Millenium")#
-    all.frame[is.na(all.frame)] <- 0#
-    all.frame <- all.frame[with(all.frame, order(as.numeric(Millenium))), ]#
-    the.result <- data.frame(all.frame$Millenium, all.frame$Site.y)#
-    colnames(the.result) <- c("Millenium", "Sites")#
-    scaled <- as.vector(apply(data.frame(the.result$Sites), 2, function(x) scale(x)))#
-    scaled.mean <- mean(scaled)#
-    scaled.sd <- sd(scaled)#
-    the.result$z.score <- (scaled-scaled.mean)/scaled.sd#
-    the.result$p.value <- pnorm(the.result$z.score, lower.tail=FALSE)#
-    return(format(the.result, digits=2))#
-}#
-site.time.half <- function(sites, dates, sigma, xmin, xmax, time) {#
-    df <- data.frame(sites, dates, sigma)#
-    colnames(df) <- c("Site",  "X14C.year", "Sigma")#
-    df <- arrange(df, desc(X14C.year))#
-    df <- arrange(df, desc(Site))#
-    site.frame <- aggregate(x=df$X14C.year, by=list(df$Site), FUN=mean)#
-    site.vector <- site.frame$x#
-    site.frame.sig <- aggregate(x=df$Sigma, by=list(df$Site), FUN=mean)#
-    site.vector.sig <- site.frame.sig$x#
-    samp.intcal <- rep("intcal13", length(site.vector))#
-    samp.slugdens <- BchronCalibrate(site.vector, site.vector.sig, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.median <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, median))#
-    medians.all <-as.vector(samp.median[,1])#
-    medians <- medians.all[medians.all < xmax & medians.all > xmin]#
-    return(medians)#
-}#
-median.stack.14C.half <- function(x, sigma, sites, xmin, xmax){#
-    samp.intcal <- rep("intcal13", length(x))#
-    samp.slugdens <- BchronCalibrate(x, sigma, samp.intcal)#
-    samp.ages <- ldply(samp.slugdens, data.frame)#
-    samp.median <- data.frame(tapply(samp.ages$ageGrid, samp.ages$.id, median))#
-    medians.all <-as.vector(samp.median[,1])#
-    medians <- medians.all[medians.all < xmax & medians.all > xmin]#
-    return(medians)#
+runApp("~/GitHub/CloudCal")
+install.packages("dtplyr")
+runApp("~/GitHub/CloudCal")
+x <- c(1, 2, 3, 4, 5)
+data.frame(x)
+as.data.frame(x)
+load("~/Downloads/myCalibration-3.quant", verbose=TRUE)
+str(Calibration)
+ls(Calibration)
+test.list <- Calibration$calList
+str(test.list)
+piece <- "Fe.K.alpha"
+piece
+test.list[piece]
+even.tester <- predict(test.list[piece], as.data.frame(x))
+test <- read.csv(file="~/Desktop/Cezanne Face/Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csv")
+head(test)
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[.]')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y ]')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y ]', '[)]')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y ]', '')''')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y ]', ')'')[[1]]
+)
+'
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y ]', ')')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y]', ')')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y]', ')@')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y]', '[)@]')[[1]]
+?strsplit
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y]', '[)@]')[[3]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y]', '[)@]')[[2]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', '[X ]', '[Y]', '[)@]')[[1]]
+strsplit('Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv', c('[X ]', '[Y]', '[)@]'))[[1]]
+name <- "Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csvv"
+name
+sub('\\D*(\\d{5}).*', '\\1', name)
+sub('\\D*(\\d{6}).*', '\\1', name)
+sub('\\D*(\\d{5}).*', '\\1', name)
+sub('\\D*(\\\d{5}).*', '\\1', name)
+sub('\\D*(\\d{5}).*', '\\1', name)
+sub('\\D*(\\d{5}).*', '\\2', name)
+sub('\\D*(\\d{5}).*', '\\3', name)
+sub('\\D*(\\d{5}).*', '\\1', name)
+sub('\\D*([X]\\d{5}).*', '\\1', name)
+sub('\\D*[X ](\\d{5}).*', '\\1', name)
+sub('\\D*(\\d{5}).*', '\\3', name)
+sub('\\D*(\\d{6}).*', '\\3', name)
+regmatches(name, gregexpr("(?<=@)[a-z]+", tweet,perl=T))
+regmatches(name, gregexpr("(?<=@)[a-z]+", name,perl=T))
+regmatches(name, gregexpr("(()", name,perl=T))
+regmatches(name, gregexpr("()", name,perl=T))
+sub('.(_(\\d{5})_.*', '\\1', name)
+sub('.'('_(\\d{5})_.*', '\\1', name)
+)
+sub('.'''('_(\\d{5})_.*', '\\1', name)
+sub('.''('_(\\d{5})_.*', '\\1', name)
+strapplyc(name, "_(\\d{5})_", simplify = TRUE)
+install.packages("gsubfn")
+strapplyc(name, "_(\\d{5})_", simplify = TRUE)
+library(gsubfn)
+strapplyc(name, "_(\\d{5})_", simplify = TRUE)
+strapplyc(name, "_(\\d{6})_", simplify = TRUE)
+name
+ll = unlist(strsplit(name,'()'))
+ll
+name
+strsplit(name, "_")[[1]][3]
+strsplit(name, "(X )")[[1]][3]
+strsplit(name, "(X ")[[1]][3]
+strsplit(name, '(X '[[1]][3]
+)
+strsplit(name, '(X '[[1]][3])
+strsplit(name, '( '[[1]][3])
+strsplit(name, '( '[[1]][6])
+strsplit(name, '[X ]', '[Y]', '[)@]')[[1]]
+strsplit(name, '[ ]', '[Y]', '[)@]')[[1]]
+strsplit(name, '[ ]''[)@]')[[1]]
+strsplit(name, '[ ]')[[1]]
+strsplit(name, '[ ]')
+strsplit(name, '[ ]', ')')
+strsplit(name, '[ ]', ')@')
+strsplit(name, '[ ]', "")@")
+)
+"
+strsplit(name, '[ ]', ")@")
+new.test <- strsplit(name, '[ ]')[[1]]
+new.test
+new.test.x <- new.test[4]
+new.test.x
+new.test.x <- substr(new.test[6], 1, 6)
+new.test.x
+new.test.x <- as.numeric(new.test[4])
+new.test.x
+read_csv_net <- function(filename){#
+    filestring <- strsplit(filename, '[ ]')[[1]]#
+    x <- as.numeric(filestring[4]#
+    y <- as.numeric(substr(filestring[6], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=FALSE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Background#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    data.frame(x, y, element, line, net, background)#
+    colnames("X", "Y", "Element", "Line", "Net", "Background")#
+    data.frame#
 }
-gisp2 <- read.csv(file="/Users/lee/Dropbox/Documents/GISP and Civilization/gisp2.csv")
-head(gisp2)
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=1.8, label="Pax Romana"))+#
-geom_text(aes(x=270, y=2.3, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-1.4, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-1.4, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-1.4, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-1.4, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-500, 750)) +#
-scale_y_continuous("Temperature (C)") +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=1.8, label="Pax Romana"))+#
-geom_text(aes(x=270, y=2.3, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-1.4, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-1.4, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-1.4, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-1.4, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-500, 750)) +#
-scale_y_continuous("Temperature (C)", limits = c(-35, -28)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=1.8, label="Pax Romana"))+#
-geom_text(aes(x=270, y=2.3, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-1.4, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-1.4, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-1.4, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-1.4, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-500, 750)) +#
-scale_y_continuous("Temperature (C)", limits = c(-33, -29)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=1.8, label="Pax Romana"))+#
-geom_text(aes(x=270, y=2.3, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-1.4, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-1.4, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-1.4, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-1.4, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-33, -29)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=1.8, label="Pax Romana"))+#
-geom_text(aes(x=270, y=2.3, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-1.4, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-1.4, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-1.4, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-1.4, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -28.5)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=1.8, label="Pax Romana"))+#
-geom_text(aes(x=270, y=2.3, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-1.4, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-1.4, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-1.4, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-2.3, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-1.4, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -29.5)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=-31, label="Pax Romana"))+#
-geom_text(aes(x=270, y=-30.5, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-33, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-33, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-33, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-33, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -29.5)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=-31, label="Pax Romana"))+#
-geom_text(aes(x=270, y=-30.5, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-32, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-32, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-32, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-32, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -29.5)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=-30, label="Pax Romana"))+#
-geom_text(aes(x=270, y=-30.9, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-32.5, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-32.5, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-32.5, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-32.5, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -29.5)) +#
-theme_light()#
-roman.gisp2
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=-30, label="Pax Romana"))+#
-geom_text(aes(x=270, y=-30.2, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-32.5, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-32.5, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-32.5, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-32.5, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -29.5)) +#
-theme_light()#
-roman.gisp2
-ggsave(roman.gisp2, file="/Users/lee/Dropbox/Documents/GISP and Civilization/GISP2.tiff", device="tiff", dpi=300, width=10.2, height=4.39)
-ggsave(roman.gisp2, file="/Users/lee/Dropbox/Documents/GISP and Civilization/GISP2.tiff", device="tiff", dpi=300, width=10.2, height=4.39, compression = "lzw")
-?ggsave
-?tiff
-tiff(filename = "/Users/lee/Dropbox/Documents/GISP and Civilization/GISP2.tiff", width = 10.2, height = 4.39, units = "in", pointsize = 12, res=1000, compression="lzw")
-roman.gisp2
-tiff(filename = "/Users/lee/Dropbox/Documents/GISP and Civilization/GISP2.tiff", width = 10.2, height = 4.39, units = "in", pointsize = 12, res=300, compression="lzw")
-roman.gisp2 <- ggplot(gisp2) +#
-geom_line(aes(1950-Age, Temperature..C.))+#
-geom_text(aes(x=40, y=-30, label="Pax Romana"))+#
-geom_text(aes(x=270, y=-30.2, label="Imperial Crisis"))+#
-geom_rect(aes(NULL, NULL), xmin=-113, xmax=-101, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=-106, y=-32.5, label="Cimbrian War"))+#
-geom_rect(aes(NULL, NULL), xmin=166, xmax=180, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=175, y=-32.5, label="Marcomannic War"))+#
-geom_rect(aes(NULL, NULL), xmin=376, xmax=410, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=376, y=-32.5, label="Visigothic War"))+#
-geom_rect(aes(NULL, NULL), xmin=500, xmax=600, ymin=-35, ymax=2.8, fill="grey80", alpha=0.3)+#
-geom_text(aes(x=550, y=-32.5, label="Migration Period"))+#
-geom_line(aes(1950-Age, Temperature..C.), lwd=1.1)+#
-geom_line(aes(1950-Age, Temperature..C.), colour="light blue", lwd=0.5) +#
-scale_x_continuous("Year BC/AD", limits = c(-400, 800)) +#
-scale_y_continuous("Temperature (C)", limits = c(-32.5, -29.5)) +#
-theme_light()
-roman.gisp2
+read_csv_net <- function(filename){#
+    filestring <- strsplit(filename, '[ ]')[[1]]#
+    x <- as.numeric(filestring[4]#
+    y <- as.numeric(substr(filestring[6], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=FALSE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Background#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    parsed.file <- data.frame(x, y, element, line, net, background)#
+    colnames(parsed.file) <- c("X", "Y", "Element", "Line", "Net", "Background")#
+    parsed.file#
+}
+read_csv_net <- function(filename){#
+    filestring <- strsplit(filename, '[ ]')[[1]]#
+    x <- as.numeric(filestring[4])#
+    y <- as.numeric(substr(filestring[6], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=FALSE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Background#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    parsed.file <- data.frame(x, y, element, line, net, background)#
+    colnames(parsed.file) <- c("X", "Y", "Element", "Line", "Net", "Background")#
+    parsed.file#
+}
+name
+read_csv_net(name)
+name <- "~/Dropbox/Documents/Cezanne/Cezanne Face/Cezanne Face_PDHID 81410(X 16.520 Y 12.500)@170617_142335.csv"
+name
+read_csv_net(name)
+filename <- name
+filestring <- strsplit(filename, '[ ]')[[1]]
+filestring
+sub("^[^.]*", "", filename)
+sub("^[^X ]*", "", filename)
+sub("^[^.]*", "", filename)
+strsplit(filename,"\\X ")
+strsplit(filename,"\\Y ")
+as.numeric(substr(strsplit(filename,"\\X "), 1, 6))
+filename
+as.numeric(substr(strsplit(filename,"\\X "), 1, 6))
+substr(strsplit(filename,"\\X "), 1, 6)
+strsplit(filename,"\\X ")
+strsplit(filename,"\\X ")[[1]][2]
+x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))
+x
+y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))
+y
+read_csv_net <- function(filename){#
+    x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))#
+    y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=FALSE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Background#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    parsed.file <- data.frame(x, y, element, line, net, background)#
+    colnames(parsed.file) <- c("X", "Y", "Element", "Line", "Net", "Background")#
+    parsed.file#
+}
+read_csv_net(filename)
+x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))#
+    y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))
+x
+y
+ret <- read.csv(file=filename, sep=",", header=FALSE)
+head(ret)
+ret <- read.csv(file=filename, sep=",", header=TRUE)
+head(ret)
+read_csv_net <- function(filename){#
+    x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))#
+    y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=TRUE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Background#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    parsed.file <- data.frame(x, y, element, line, net, background)#
+    colnames(parsed.file) <- c("X", "Y", "Element", "Line", "Net", "Background")#
+    parsed.file#
+}
+read_csv_net(filename)
+ret <- read.csv(file=filename, sep=",", header=TRUE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Background
+head(background)
+head(ret)
+background <- ret$Backgr.
+head(background)
+read_csv_net <- function(filename){#
+    x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))#
+    y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=TRUE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$net#
+    background <- ret$Backgr.#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    parsed.file <- data.frame(x.vector, y.vector, element, line, net, background)#
+    colnames(parsed.file) <- c("X", "Y", "Element", "Line", "Net", "Background")#
+    parsed.file#
+}
+read_csv_net(filename)
+read_csv_net <- function(filename){#
+    x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))#
+    y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))#
+    ret <- read.csv(file=filename, sep=",", header=TRUE)#
+    element <- ret$Element#
+    line <- ret$Line#
+    net <- ret$Net#
+    background <- ret$Backgr.#
+    x.vector <- rep(x, length(element))#
+    y.vector <- rep(y, length(element))#
+    parsed.file <- data.frame(x.vector, y.vector, element, line, net, background)#
+    colnames(parsed.file) <- c("X", "Y", "Element", "Line", "Net", "Background")#
+    parsed.file#
+}
+read_csv_net(filename)
 library(shiny)
-runApp()
+runApp("~/GitHub/Tracer Map")
+install.package("rJava")
+install.packages("rJava")
+runApp("~/GitHub/Tracer Map")
+library(rJAva)
+library(rJava)
+install.packages("rJava")
+library(rJava)
 library(shiny)
-runApp("~/Desktop/ArtaxMap App")
-runApp("~/Desktop/ArtaxMap App")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")
+runApp("~/GitHub/Tracer Map")

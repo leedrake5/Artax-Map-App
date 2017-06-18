@@ -10,13 +10,18 @@ tabPanel("Map",
 titlePanel("Single Element Plot"),
 sidebarLayout(
 sidebarPanel(
+actionButton("actionprocess", label = "Process Data"),
+tags$hr(),
+
 fileInput('file1', 'Choose file to upload',
-accept = c('.xlsx')
+accept = c('.csv'), multiple=TRUE
 ),
 
 
 
 uiOutput('inElements'),
+uiOutput('inLines'),
+
 
 tags$hr(),
 
@@ -57,6 +62,24 @@ brush = brushOpts(
 id = "plot1_brush",
 resetOnNew = TRUE
 )))))
+),
+
+tabPanel("Fuck",
+titlePanel("Single Element Plot"),
+sidebarLayout(
+sidebarPanel(
+
+actionButton('hotableprocess', "Enter Values")
+
+
+),
+
+mainPanel(
+tabsetPanel(
+tabPanel('Spectral Counts', dataTableOutput('testtable'))
+)))
+
+
 ))
 ))
 

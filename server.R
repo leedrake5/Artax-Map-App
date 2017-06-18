@@ -11,9 +11,9 @@ library(R.utils)
 library(R.oo)
 library(Biobase)
 library(plyr)
+library(dplyr)
 
 library(ggplot2)
-library(xlsx)
 library(reshape2)
 library(pbapply)
 library(akima)
@@ -24,50 +24,77 @@ shinyServer(function(input, output) {
     
     
     
+    observeEvent(input$actionprocess, {
+        
+        myData <- reactive({
+            
+            withProgress(message = 'Processing Data', value = 0, {
+                
+                inFile <- input$file1
+                if (is.null(inFile)) return(NULL)
+                
+                #inName <- inFile$name
+                #inPath <- inFile$datapath
+                
+                #inList <- list(inName, inPath)
+                #names(inList) <- c("inName", "inPath")
+               
+                
+                n <- length(inFile$name)
+                
+                my.x <- pblapply(inFile$name, function(x) read_csv_x(x))
+                my.y <- pblapply(inFile$name, function(x) read_csv_y(x))
 
 
-fishList <- reactive({
-    # input$file1 will be NULL initially. After the user selects
-    # and uploads a file, it will be a data frame with 'name',
-    # 'size', 'type', and 'datapath' columns. The 'datapath'
-    # column will contain the local filenames where the data can
-    # be found.
-    
-    inFile <- input$file1
-    
-    #if (is.null(inFile)) {return(NULL)}
-    
-    
-    
-    proto.fish <- loadWorkbook(file=inFile$datapath)
-    fish.sheets <- getSheets(proto.fish)
-    fish.names <- as.vector(names(fish.sheets))
-    
-    fishes <- pblapply(fish.names, function(x) read.xlsx(file=inFile$datapath, sheetIndex=x))
-    names(fishes) <- fish.names
-    parameters <- fishes[[1]]
-    fishes[[1]] <- NULL
-    
-    fish.melt <- melt(fishes, id="NA.")
-    
-    fish.melt$variable <- as.numeric(substring(fish.melt$variable, 2))
-    colnames(fish.melt) <- c("y", "x", "counts", "Element")
+                myfiles = pblapply(inFile$datapath, function(x) read_csv_net(x))
+                
+                myfiles.1 <- mapply(cbind, myfiles, "x" <- my.x, SIMPLIFY=F)
+                myfiles.2 <- mapply(cbind, myfiles.1, "y" <- my.y, SIMPLIFY=F)
+                
+                all.col.names <- c( "Element", "Line", "Net", "Background", "x", "y")
+                
+                myfiles.list <- pblapply(myfiles.2, setNames, all.col.names)
+
+
+                
+                
+                myfiles.frame <- do.call(rbind, lapply(myfiles.list, data.frame, stringsAsFactors=FALSE))
+                
+
+                
+                
+                
+                
+                data <- myfiles.frame
+                
+                
+                incProgress(1/n)
+                Sys.sleep(0.1)
+            })
+            
+            data
+            
+        })
+        
+        
+      
 
     
-    fish.melt
-    
 
-})
 
 #data.m <- metadataTableRe()
 
 #if (is.null(data.m)){ data.m <- ceramics}
 
-
+output$testtable <- renderDataTable({
+    test <- datatable(myData())
+    test
+    
+})
 
 
 outElements <- reactive({
-    metadata.dat <- fishList()
+    metadata.dat <- myData()
     
     element.names <- unique(metadata.dat$Element)
     
@@ -76,28 +103,27 @@ outElements <- reactive({
     
 })
 
+outLines <- reactive({
+    metadata.dat <- myData()
+    
+    line.names <- unique(metadata.dat$Line)
+    
+    line.names
+    
+    
+})
+
+
 
 
 output$inElements <- renderUI({
     selectInput(inputId = "elements", label = h4("Choose Element Line"), choices =  outElements())
 })
 
-
-output$inElement1 <- renderUI({
-    selectInput(inputId = "element1", label = h4("Choose First Element Line"), choices =  outElements())
+output$inLines <- renderUI({
+    selectInput(inputId = "lines", label = h4("Choose Element Line"), choices =  outLines())
 })
 
-
-
-output$inElement2 <- renderUI({
-    selectInput(inputId = "element2", label = h4("Choose Second Element Line"), choices =  outElements())
-})
-
-
-
-output$inElement3 <- renderUI({
-    selectInput(inputId = "element3", label = h4("Choose Third Element Line"), choices =  outElements())
-})
 
 
 
@@ -106,12 +132,12 @@ plotInput <- reactive({
     
     colvals = as.character(paste(input$colorramp, input$colorrampvalues, ")", sep="", collapse=""))
     
-    fishImport <- fishList()
+    fishImport <- myData()
     
-    fishSubset <- subset(fishImport, fishImport$Element==input$elements)
+    fishSubset <- fishImport %>% filter(Line==input$lines & Element==input$elements)
     
     spectral.map <- ggplot(fishSubset) +
-    geom_tile(aes(x, y, colour=counts, fill=counts)) +
+    geom_tile(aes(x, y, colour=Net, fill=Net)) +
     scale_colour_gradientn("Net Counts", colours=eval(parse(text=paste(colvals)))) +
     scale_fill_gradientn("Net Counts", colours=eval(parse(text=paste(colvals)))) +
     coord_equal() +
@@ -130,7 +156,7 @@ plotInput <- reactive({
     
     y.ratio <- y.range/x.range
     
-    fish.int <- with(fishSubset, interp(x=x, y=y, z=counts, duplicate="user", dupfun="min", nx=input$resolution, ny=input$resolution*y.ratio))
+    fish.int <- with(fishSubset, interp(x=x, y=y, z=Net, duplicate="user", dupfun="min", nx=input$resolution, ny=input$resolution*y.ratio))
     fish.int.melt <- melt(fish.int$z, na.rm=TRUE)
     colnames(fish.int.melt) <- c("x", "y", "z")
     
@@ -184,6 +210,6 @@ content = function(file) {
 
 
 
-
+})
 
 

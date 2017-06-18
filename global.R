@@ -6,6 +6,90 @@ library(ggtern)
 library(ggplot2)
 library(shiny)
 
+
+
+
+
+read_csv_x <- function(filename) {
+    
+    x <- as.numeric(substr(strsplit(filename,"\\X ")[[1]][2], 1, 6))
+    
+    x
+
+    
+}
+
+read_csv_y <- function(filename) {
+    
+    y <- as.numeric(substr(strsplit(filename,"\\Y ")[[1]][2], 1, 6))
+    
+    
+    y
+    
+}
+
+read_csv_net <- function(filepath) {
+    
+    ret <- read.csv(file=filepath, sep=",", header=TRUE)
+    element <- ret$Element
+    line <- ret$Line
+    net <- ret$Net
+    background <- ret$Backgr.
+    
+    
+    parsed.file <- data.frame(element, line, net, background)
+    colnames(parsed.file) <- c( "Element", "Line", "Net", "Background")
+    
+    parsed.file
+
+    
+    
+}
+
+add_x <- function(netcounts, x) {
+    
+    netcounts$x <- x
+    
+    netcounts
+    
+}
+
+add_y <- function(netcounts, y) {
+    
+    netcounts$y <- y
+    
+    netcounts
+    
+}
+
+read_csv_all <- function(files){
+    
+    file.name <- files$inName
+    file.path <- files$inPath
+    
+    
+    x <- as.numeric(substr(strsplit(file.name,"\\X ")[[1]][2], 1, 6))
+    y <- as.numeric(substr(strsplit(file.name,"\\Y ")[[1]][2], 1, 6))
+    
+
+    ret <- read.csv(file=file.path, sep=",", header=TRUE)
+    element <- ret$Element
+    line <- ret$Line
+    net <- ret$Net
+    background <- ret$Backgr.
+    
+    x.vector <- rep(x, length(element))
+    y.vector <- rep(y, length(element))
+    
+    parsed.file <- data.frame(x.vector, y.vector, element, line, net, background)
+    colnames(parsed.file) <- c("x", "y", "Element", "Line", "Net", "Background")
+    
+    parsed.file
+    
+}
+
+
+
 range01 <- function(x){(x-min(x))/(max(x)-min(x))}
 
 extract.with.context <- function(x, rows, after = 0, before = 0) {
@@ -64,6 +148,7 @@ is.0 <- function(cps, file) {
         return(framed)
     }
 }
+
 
 dt_options <- reactive({
     # dynamically create options for `aoColumns` depending on how many columns are selected.
